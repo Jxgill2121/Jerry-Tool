@@ -1,7 +1,6 @@
 # JERRY - Powertech Analysis Tools
 
 **VERSION:** 2026-01-16 v4.4 - Modular Architecture
-**Company:** Powertech – One Stop Tools (Surrey, BC)
 
 ## Overview
 
@@ -153,7 +152,7 @@ Each tab module exports a `build_tab(parent, app)` function:
 
 ## Support
 
-For issues or questions, contact Powertech – One Stop Tools, Surrey, BC.
+For issues or questions, contact Powertech.
 
 ## Version History
 
