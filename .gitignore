@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Node
+node_modules/
+frontend/node_modules/
+
+# IDE
+.vscode/*
+!.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Claude Code session state
+TASK_STATE.md
+.claude/settings.local.json
+
+# PyInstaller build artifacts
+build/
+dist/
+*.spec
+logs/
+
+# Data files — do not commit test or sample data
+*.tdms
+*.TDMS
+Test/

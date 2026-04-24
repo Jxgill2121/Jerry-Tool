@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-base text-gray-100;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track  { background: transparent; }
+::-webkit-scrollbar-thumb  { background: #3c5070; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #4e6590; }
+
+input[type="text"],
+input[type="number"],
+input:not([type]),
+textarea {
+  @apply bg-surface2 border border-border rounded-md px-3 py-1.5 text-sm text-gray-100
+         placeholder-gray-500 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/30
+         transition-colors;
+}
+
+select {
+  @apply bg-surface2 border border-border rounded-md px-3 py-1.5 text-sm text-gray-100
+         focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/30
+         transition-colors cursor-pointer;
+}

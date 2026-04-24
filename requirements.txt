@@ -1,0 +1,10 @@
+fastapi>=0.111.0
+uvicorn[standard]>=0.29.0
+python-multipart>=0.0.9
+pandas>=2.0.0
+numpy>=1.24.0
+openpyxl>=3.1.0
+npTDMS>=1.10.0
+plotly>=5.18.0
+kaleido>=0.2.1
+Pillow>=10.0.0
