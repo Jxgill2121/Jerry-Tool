@@ -1,6 +1,6 @@
 # JERRY - Handover Document
 
-**Repository:** https://github.com/Jxgill2121/Jerrry-Tool  
+**Repository:** https://github.com/Jxgill2121/Jerry-Tool  
 **Branch:** `main` (production)  
 **Last Updated:** April 2026
 
@@ -28,8 +28,8 @@ Jerry is a suite of data analysis tools for Powertech featuring web-based applic
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/Jxgill2121/Jerrry-Tool.git
-cd Jerrry-Tool
+git clone https://github.com/Jxgill2121/Jerry-Tool.git
+cd Jerry-Tool
 
 # 2. Install backend dependencies
 cd api
@@ -169,7 +169,7 @@ Error: Cannot find module 'react-router-dom'
 ### Server Shows "Fetching from old branch"
 ```
 [1/3] Downloading latest code...
-From https://github.com/Jxgill2121/Jerrry-Tool
+From https://github.com/Jxgill2121/Jerry-Tool
  * branch            claude/convert-to-webapp-BR383 -> FETCH_HEAD
 ```
 **Fix:** The server's git repo isn't on the `main` branch. Run these manually on the server:
@@ -241,7 +241,7 @@ pm2 save
 
 **Server Update Script:**
 ```
-C:\Apps\Jerrry-Tool\update.bat
+C:\Apps\Jerry-Tool\update.bat
 ```
 Pulls from `main` branch, rebuilds, restarts server.
 

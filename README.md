@@ -15,7 +15,7 @@ JERRY is a professional data analysis tool for Powertech featuring:
 ## Project Structure
 
 ```
-Jerrry-Tool/
+Jerry-Tool/
 ├── main.py                           # Application entry point
 ├── powertech_tools/                   # Main package
 │   ├── __init__.py
