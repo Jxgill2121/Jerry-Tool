@@ -4,6 +4,9 @@ echo  Jerry - Updating to latest...
 echo ================================
 echo.
 
+:: Add npm global bin to PATH so pm2 is always found
+for /f "tokens=*" %%i in ('npm config get prefix') do set "PATH=%PATH%;%%i"
+
 :: Pull latest code from GitHub
 echo [1/3] Downloading latest code...
 git fetch origin main
