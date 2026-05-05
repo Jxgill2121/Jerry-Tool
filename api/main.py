@@ -37,7 +37,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 
-from api.routers import merge, maxmin, avg, asr, validation, plot, cycle_viewer, fuel_systems, soc_converter
+from api.routers import merge, maxmin, avg, asr, validation, plot, cycle_viewer, fuel_systems, soc_converter, opm_cobra_linker
 
 app = FastAPI(
     title="Jerry – Powertech Analysis Tools API",
@@ -53,15 +53,16 @@ app.add_middleware(
     expose_headers=["X-Total", "X-Passed", "X-Failed"],
 )
 
-app.include_router(merge.router,        prefix="/api/merge",        tags=["merge"])
-app.include_router(maxmin.router,       prefix="/api/maxmin",       tags=["maxmin"])
-app.include_router(avg.router,          prefix="/api/avg",          tags=["avg"])
-app.include_router(asr.router,          prefix="/api/asr",          tags=["asr"])
-app.include_router(validation.router,   prefix="/api/validation",   tags=["validation"])
-app.include_router(plot.router,         prefix="/api/plot",         tags=["plot"])
-app.include_router(cycle_viewer.router, prefix="/api/cycle-viewer", tags=["cycle_viewer"])
-app.include_router(fuel_systems.router, prefix="/api/fuel-systems", tags=["fuel_systems"])
-app.include_router(soc_converter.router, prefix="/api/soc",         tags=["soc"])
+app.include_router(merge.router,            prefix="/api/merge",        tags=["merge"])
+app.include_router(maxmin.router,           prefix="/api/maxmin",       tags=["maxmin"])
+app.include_router(avg.router,              prefix="/api/avg",          tags=["avg"])
+app.include_router(asr.router,              prefix="/api/asr",          tags=["asr"])
+app.include_router(validation.router,       prefix="/api/validation",   tags=["validation"])
+app.include_router(plot.router,             prefix="/api/plot",         tags=["plot"])
+app.include_router(cycle_viewer.router,     prefix="/api/cycle-viewer", tags=["cycle_viewer"])
+app.include_router(fuel_systems.router,     prefix="/api/fuel-systems", tags=["fuel_systems"])
+app.include_router(soc_converter.router,    prefix="/api/soc",          tags=["soc"])
+app.include_router(opm_cobra_linker.router, prefix="/api/opm-cobra",    tags=["opm_cobra"])
 
 
 @app.on_event("startup")
