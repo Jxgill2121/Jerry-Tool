@@ -1,11 +1,12 @@
 import { useState } from "react";
-import MergeTab       from "./tabs/MergeTab";
-import MaxMinTab      from "./tabs/MaxMinTab";
-import AvgTab         from "./tabs/AvgTab";
-import ASRTab         from "./tabs/ASRTab";
-import ValidationTab  from "./tabs/ValidationTab";
-import CycleViewerTab from "./tabs/CycleViewerTab";
-import FuelSystemsTab from "./tabs/FuelSystemsTab";
+import MergeTab          from "./tabs/MergeTab";
+import MaxMinTab         from "./tabs/MaxMinTab";
+import AvgTab            from "./tabs/AvgTab";
+import ASRTab            from "./tabs/ASRTab";
+import ValidationTab     from "./tabs/ValidationTab";
+import CycleViewerTab    from "./tabs/CycleViewerTab";
+import FuelSystemsTab    from "./tabs/FuelSystemsTab";
+import OpmCobraLinkerTab from "./tabs/OpmCobraLinkerTab";
 
 /* ── Inline SVG icons (heroicons outline 24px) ────────────────────── */
 const ic = (path: string | string[]) => (
@@ -24,6 +25,7 @@ const ICONS: Record<string, JSX.Element> = {
   validation: ic("M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"),
   fuel:       ic(["M9.75 3.104v5.714a2.25 2.25 0 0 1-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 0 1 4.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0 1 12 15a9.065 9.065 0 0 0-6.23-.693L5 14.5m14.8.8 1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0 1 12 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"]),
   cycle:      ic(["M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z","M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"]),
+  cobra:      ic(["M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"]),
 };
 
 /* ── Nav structure ────────────────────────────────────────────────── */
@@ -31,23 +33,24 @@ const GROUPS = [
   {
     label: "Processing",
     items: [
-      { id: "merge",      label: "TDMS → Cycles", component: MergeTab },
-      { id: "maxmin",     label: "Max / Min",      component: MaxMinTab },
-      { id: "avg",        label: "Generate Averages", component: AvgTab },
+      { id: "merge",  label: "TDMS → Cycles",     component: MergeTab },
+      { id: "maxmin", label: "Max / Min",          component: MaxMinTab },
+      { id: "avg",    label: "Generate Averages",  component: AvgTab },
+      { id: "cobra",  label: "OPM Cobra Linker",   component: OpmCobraLinkerTab },
     ],
   },
   {
     label: "Analysis",
     items: [
-      { id: "asr",        label: "ASR Validation", component: ASRTab },
+      { id: "asr",        label: "ASR Validation",      component: ASRTab },
       { id: "validation", label: "Cylinder Validation", component: ValidationTab },
-      { id: "fuel",       label: "Fuel Systems",   component: FuelSystemsTab },
+      { id: "fuel",       label: "Fuel Systems",        component: FuelSystemsTab },
     ],
   },
   {
     label: "Visualization",
     items: [
-      { id: "cycle",      label: "Cycle Viewer",   component: CycleViewerTab },
+      { id: "cycle", label: "Cycle Viewer", component: CycleViewerTab },
     ],
   },
 ];
